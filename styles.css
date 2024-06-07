@@ -36,7 +36,7 @@ body {
 video {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Para cobrir toda a área do elemento */
+  object-fit: cover;
 }
 
 hr {
@@ -47,9 +47,9 @@ hr {
 
 ul {
   padding: 0;
-  display: flex; /* Adicionado para distribuir horizontalmente */
-  justify-content: space-around; /* Adicionado para distribuir com espaçamento ao redor */
-  gap: 50px; /* Aumenta o espaço horizontal entre os itens */
+  display: flex;
+  justify-content: space-around;
+  gap: 50px;
 }
 
 li {
@@ -57,7 +57,7 @@ li {
   gap: 20px;
   display: flex;
   align-items: center;
-  flex: 1; /* Distribui igualmente o espaço entre os elementos */
+  flex: 1;
 }
 
 footer {
@@ -72,7 +72,9 @@ footer {
 
 .general-container,
 .content-container {
-  width: 100vw;
+  margin-top: 5%;
+  margin-bottom: 10%;
+  width: 100%;
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -95,16 +97,16 @@ footer {
 
 .footer-content {
   width: 100%;
-  padding: 0.7rem 0.5rem; /* Diminui a espessura vertical */
+  padding: 0.7rem 0.5rem;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 30px; /* Aumenta o espaço horizontal entre os itens */
+  gap: 30px;
 }
 
 .content {
   width: 80%;
   max-width: 1000px;
-  margin: 0 auto; /* Centraliza horizontalmente */
+  margin: 0 auto;
   padding: 20px;
   text-align: center;
   color: white;
@@ -169,14 +171,20 @@ a:hover {
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 999;
 }
-
 .logo {
   text-transform: uppercase;
   gap: 1rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0 auto; /* Adicionado para centralizar a logo */
+  position: absolute; /* Adiciona posição absoluta */
+  top: 180%; /* Move a logo 60% para baixo a partir do topo */
+  left: 50%; /* Posiciona a partir da esquerda */
+  transform: translate(
+    -50%,
+    -50%
+  ); /* Translada -50% do próprio tamanho para o centro */
+  max-width: 60%; /* Define o tamanho máximo da logo em relação à largura da tela */
 }
 
 .logo-icon {
@@ -200,7 +208,7 @@ a:hover {
 @media (max-width: 768px) {
   .content {
     width: 90%;
-    padding: 20px 0; /* Ajusta o preenchimento para dispositivos menores */
+    padding: 20px 0;
   }
 
   .logo-text,
@@ -219,5 +227,26 @@ a:hover {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 4.5rem;
+  }
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  html,
+  body {
+    font-size: 18px; /* Reduz o tamanho da fonte para dispositivos menores */
+  }
+}
+
+@media (max-width: 600px) {
+  .button {
+    width: 120px; /* Ajusta a largura dos botões para dispositivos menores */
+    height: 36px;
+    font-size: 18px;
+  }
+
+  .logo-icon {
+    height: 100px; /* Ajusta o tamanho do ícone da logo para dispositivos menores */
+    width: 200px;
   }
 }
