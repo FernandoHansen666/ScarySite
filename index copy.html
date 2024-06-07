@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="preload"
+      href="assets/fonts/hemogoblin.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="assets/fonts/alagard.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin
+    />
+    <link rel="icon" href="Scary_LOGO.svg" />
+    <link
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <meta name="robots" content="index,follow" />
+    <link rel="canonical" href="https://scary.com.br" />
+    <meta property="og:title" content="SCARY RF" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:url" content="https://scary.com.br" />
+    <meta property="og:site_name" content="SCARY RF" />
+    <title>SCARY RF</title>
+  </head>
+  <body>
+    <div id="video-background">
+      <video autoplay loop muted>
+        <source src="MSHM.mp4" type="video/mp4" />
+      </video>
+    </div>
+
+    <div class="general-container">
+      <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="#">
+          <div class="logo">
+            <img
+              src="Scary_LOGO.svg"
+              alt="logo scary rf"
+              class="logo-icon"
+              draggable="false"
+            />
+          </div>
+        </a>
+        <div class="collapse navbar-collapse">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="languageDropdown"
+                role="button"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                Language
+              </a>
+              <div class="dropdown-menu" aria-labelledby="languageDropdown">
+                <a class="dropdown-item" href="#" onclick="setLanguage('en')"
+                  >English</a
+                >
+                <a class="dropdown-item" href="#" onclick="setLanguage('pt-br')"
+                  >Português</a
+                >
+              </div>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <div class="content-container">
+        <div class="content">
+          <div class="infos-main">
+            <div class="info">
+              <h2 id="title">What is SCARY RF?</h2>
+              <br />
+              <p id="description">
+                The Scary-RF Tool is an Arduino-based project using an ESP32, a
+                CC1101 module, and some components to create a versatile radio
+                communication tool (RF). With it, you can capture and reproduce
+                RF signals (the famous Replay Attack) at frequencies of 315MHz
+                or 433.92MHz, send a random code at 315-433Mhz, and analyze
+                which frequency it is receiving at 300-928Mhz. <br />
+                I will still add more functions using the 4 navigation buttons,
+                creating a menu with more possibilities using radio frequency.
+              </p>
+            </div>
+            <div class="info">
+              <br /><br />
+              <h3 id="support-title">Questions and Support</h3>
+              <br />
+              <p id="support-description">
+                If you have any questions or need support to use SCARY RF, feel
+                free to open an issue on GitHub or contact me directly. I'm here
+                to help!
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="footer-content">
+          <ul>
+            <li>
+              <a
+                class="socials"
+                href="https://discord.gg/waHXmcVdt6"
+                target="_blank"
+              >
+                <img src="Disc-icon.svg" alt="logo discord" />
+                <p><span class="social-link">discord.gg</span></p>
+              </a>
+            </li>
+            <hr />
+            <li>
+              <a
+                class="socials"
+                href="https://www.instagram.com/fear.hansen/"
+                target="_blank"
+              >
+                <img src="Insta-icon.svg" alt="logo instagram" />
+                <p><span class="social-link">Instagram</span></p>
+              </a>
+            </li>
+            <hr />
+            <li>
+              <a
+                class="socials"
+                href="https://github.com/FernandoHansen666/ScaryRF-315-433mhz"
+                target="_blank"
+              >
+                <img src="Git-icon.svg" alt="logo github" />
+                <p><span class="social-link">github</span></p>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </footer>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+      function setLanguage(lang) {
+        if (lang === "pt-br") {
+          document.documentElement.lang = "pt-BR";
+          document.getElementById("title").innerText = "O que é o SCARY RF?";
+          document.getElementById("description").innerText =
+            "O Scary-RF Tool é um projeto raiz de Arduino, usando um ESP32, um módulo CC1101 e alguns componentes para criar uma ferramenta versátil de comunicação por rádio (RF). Com ela, você pode capturar e reproduzir sinais RF (o famoso Replay Attack) nas frequências de 315MHz ou 433.92MHz, enviar um código aleatório em 315-433Mhz e analisar qual frequência está recebendo 300-928Mhz. Ainda vou adicionar mais funções usando os 4 botões de navegação, criando um menu com mais possibilidades usando radiofrequência.";
+          document.getElementById("support-title").innerText =
+            "Dúvidas e suporte";
+          document.getElementById("support-description").innerText =
+            "Se você tiver alguma dúvida ou precisar de suporte para usar o SCARY RF, não hesite em abrir uma issue no GitHub ou entrar em contato diretamente comigo. Estou aqui para ajudar!";
+        } else {
+          document.documentElement.lang = "en";
+          document.getElementById("title").innerText = "What is SCARY RF?";
+          document.getElementById("description").innerText =
+            "The Scary-RF Tool is an Arduino-based project using an ESP32, a CC1101 module, and some components to create a versatile radio communication tool (RF). With it, you can capture and reproduce RF signals (the famous Replay Attack) at frequencies of 315MHz or 433.92MHz, send a random code at 315-433Mhz, and analyze which frequency it is receiving at 300-928Mhz. I will still add more functions using the 4 navigation buttons, creating a menu with more possibilities using radio frequency.";
+          document.getElementById("support-title").innerText =
+            "Questions and Support";
+          document.getElementById("support-description").innerText =
+            "If you have any questions or need support to use SCARY RF, feel free to open an issue on GitHub or contact me directly. I'm here to help!";
+        }
+      }
+    </script>
+  </body>
+</html>
