@@ -228,30 +228,18 @@ a:hover {
 
 
 /* Responsivo */
-@media (max-width: 1200px) {
-  html,
-  body {
-    font-size: 33px; /* Reduz o tamanho da fonte para dispositivos menores */
-  }
 
-  .general-container,
-  .content-container {
-   
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .logo-icon {
-    height: 200px;
-    width: 350px;
-  }
-
-}
 
 @media (max-width: 600px) {
+
+  html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-size: 15px;
+}  
+
   .button {
     width: 120px; /* Ajusta a largura dos botões para dispositivos menores */
     height: 36px;
@@ -262,7 +250,8 @@ a:hover {
 .content-container {
  
   width: 100%;
-  height: 95%;
+  height: 90%;
+  
   display: flex;
   justify-content: center;
   align-items: center;
@@ -272,7 +261,6 @@ a:hover {
   width: 100%;
   height: 90%;
   justify-content: center;
-  
   gap: 30px;
 }
 
