@@ -23,6 +23,7 @@ body {
   background-color: #070707;
 }
 
+
 #video-background {
   position: fixed;
   top: 0;
@@ -257,7 +258,26 @@ body {
 
   .logo-icon {
     height: 100px; /* Ajusta o tamanho do ícone da logo para dispositivos menores */
-    width: 200px;
+    width: 180px;
   }
+  
+  .dropdown-menu {
+    min-width: 100px; /* Minimum width */
+    max-width: 200px; /* Maximum width */
+    width: auto; /* Adjust width automatically */
+  }
+
+  .nav-item.dropdown .dropdown-menu {
+    top: 100%;
+    left: 0;
+    right: auto;
+    position: absolute;
+  }
+  
+
+  .navbar-collapse {
+    display: flex;
+  }
+
 
 }
