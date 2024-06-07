@@ -208,7 +208,14 @@ a:hover {
     contrast(95%);
 }
 
-@media (max-width: 768px) {
+
+
+
+/* Responsivo */
+
+
+@media (max-width: 700px) {
+
   .content {
     width: 90%;
     padding: 20px 0;
@@ -223,14 +230,6 @@ a:hover {
   footer {
     position: end;
   }
-}
-
-
-
-/* Responsivo */
-
-
-@media (max-width: 600px) {
 
   html,
 body {
@@ -250,19 +249,11 @@ body {
 .content-container {
  
   width: 100%;
-  height: 90%;
+  height: 100%;
   
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.footer-content {
-  width: 100%;
-  height: 90%;
-  justify-content: center;
-  align-items: end;
-  gap: 30px;
 }
 
   .logo-icon {
