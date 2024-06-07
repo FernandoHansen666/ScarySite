@@ -1,0 +1,283 @@
+@font-face {
+  src: url("assets/fonts/hemogoblin.ttf");
+  font-family: "Hemogoblin";
+}
+
+@font-face {
+  src: url("assets/fonts/alagard.ttf");
+  font-family: "alagard";
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-size: 24px;
+  color: rgb(0, 0, 0);
+  background-color: #070707;
+}
+
+#video-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: 100%;
+}
+
+video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+hr {
+  margin-bottom: 0.5rem;
+  height: 25px;
+  border: 1px solid #00847e;
+}
+
+ul {
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+  gap: 50px;
+}
+
+li {
+  list-style-type: none;
+  gap: 20px;
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+footer {
+  font-family: "Hemogoblin", sans-serif;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 6.5%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+.general-container,
+.content-container {
+  margin-top: 5%;
+  margin-bottom: 10%;
+  width: 100%;
+  height: 93%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: "alagard", sans-serif;
+  z-index: 1;
+}
+
+
+.footer-content,
+.navbar-content,
+.content,
+.socials,
+.medias {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-content {
+  width: 100%;
+  padding: 0rem 0rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.content {
+  width: 80%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+a.button {
+  width: 160px;
+  height: 42px;
+  font-size: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background-color: #00b4d4;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+img {
+  width: 24px;
+  height: 24px;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 400;
+}
+
+h3,
+p {
+  margin: 0;
+}
+
+h4 {
+  color: #5b5b5b;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  display: flex;
+  align-items: center;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.link {
+  text-decoration: underline;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 13%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+.logo {
+  text-transform: uppercase;
+  gap: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute; /* Adiciona posição absoluta */
+  top: 50%; /* Move a logo 60% para baixo a partir do topo */
+  left: 50%; /* Posiciona a partir da esquerda */
+  transform: translate(
+    -50%,
+    -50%
+  ); /* Translada -50% do próprio tamanho para o centro */
+  max-width: 50%; /* Define o tamanho máximo da logo em relação à largura da tela */
+}
+
+.logo-icon {
+  height: 90px;
+  width: 250px;
+}
+
+.red {
+  color: #ee1212;
+}
+
+.darker-gray {
+  color: #424242;
+}
+
+.darker-gray-svg {
+  filter: invert(27%) sepia(5%) saturate(0%) hue-rotate(236deg) brightness(90%)
+    contrast(95%);
+}
+
+@media (max-width: 768px) {
+  .content {
+    width: 90%;
+    padding: 20px 0;
+  }
+
+  .logo-text,
+  .social-link {
+    display: none;
+    gap: 1rem;
+  }
+
+  footer {
+    position: relative;
+  }
+}
+
+
+
+/* Responsivo */
+@media (max-width: 1200px) {
+  html,
+  body {
+    font-size: 33px; /* Reduz o tamanho da fonte para dispositivos menores */
+  }
+
+  .general-container,
+  .content-container {
+   
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .logo-icon {
+    height: 200px;
+    width: 350px;
+  }
+
+}
+
+@media (max-width: 600px) {
+  .button {
+    width: 120px; /* Ajusta a largura dos botões para dispositivos menores */
+    height: 36px;
+    font-size: 18px;
+  }
+
+  .general-container,
+.content-container {
+ 
+  width: 100%;
+  height: 95%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-content {
+  width: 100%;
+  height: 90%;
+  justify-content: center;
+  
+  gap: 30px;
+}
+
+  .logo-icon {
+    height: 100px; /* Ajusta o tamanho do ícone da logo para dispositivos menores */
+    width: 200px;
+  }
+}
