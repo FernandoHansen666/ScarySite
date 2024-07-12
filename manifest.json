@@ -1,0 +1,14 @@
+{
+  "name": "ScaryRF",
+  "builds": [
+    {
+      "chipFamily": "ESP32",
+      "parts": [
+        {
+          "path": "",
+          "offset": 0
+        }
+      ]
+    }
+  ]
+}
