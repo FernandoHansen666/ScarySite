@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <title>ScaryRF ESP32 Flasher</title>
@@ -7,21 +7,36 @@
       name="description"
       content="Easily flash ScaryRF firmware on your ESP32 device"
     />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="color-scheme" content="dark light" />
+
     <style>
       body {
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-          sans-serif;
+        font-family: "Courier New", Courier, monospace;
         margin: 0;
         padding: 20px;
-        color: #00dd00;
-        background-color: #202124;
+        color: #e0e0e0; /* Light gray for better readability */
+        background-color: #121212; /* Dark background */
+        line-height: 1.6;
       }
       .content {
         max-width: 600px;
         margin: 0 auto;
         padding: 12px;
+        background-color: #1e1e1e; /* Slightly lighter background for contrast */
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        border: 1px solid #6200ea; /* Accent color */
+      }
+      h1,
+      h2,
+      h3 {
+        text-align: center;
+        color: #bb86fc; /* Light purple accent */
+      }
+      h1 {
+        font-size: 2em;
+        margin-bottom: 0.5em;
       }
       h2 {
         margin-top: 2em;
@@ -29,31 +44,28 @@
       h3 {
         margin-top: 1.5em;
       }
+      p {
+        margin-bottom: 1em;
+      }
       a {
-        color: #e0d204;
+        color: #03dac6; /* Teal accent */
         text-decoration: none;
       }
       a:hover {
         text-decoration: underline;
       }
-      .invisible {
-        visibility: hidden;
-      }
-      .hidden {
-        display: none;
-      }
-      esp-web-install-button[install-unsupported] {
-        visibility: inherit;
-      }
-      .content pre {
-        max-width: 100%;
-        overflow-y: scroll;
+      .button-row {
+        text-align: center;
+        margin: 1.5em 0;
       }
       .footer {
         margin-top: 24px;
-        border-top: 1px solid #ccc;
+        border-top: 1px solid #6200ea; /* Accent color */
         padding-top: 24px;
         text-align: center;
+      }
+      .footer a {
+        color: #bb86fc; /* Light purple accent */
       }
       .footer .initiative {
         font-style: italic;
@@ -61,44 +73,57 @@
       }
       table {
         border-spacing: 0;
+        width: 100%;
+        margin-bottom: 1.5em;
       }
       td {
         padding: 8px;
-        border-bottom: 1px solid #ccc;
+        border-bottom: 1px solid #6200ea; /* Accent color */
       }
       .radios li {
         list-style: none;
         line-height: 2em;
       }
       .logo {
-        max-width: 400px;
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto 1em;
+      }
+      .logo-icon {
+        height: 125px;
+        width: 250px;
       }
       .wrapper {
         display: flex;
         justify-content: center;
       }
-      .back1usb {
-        height: 18%;
-        width: 20%;
-        padding: 10px;
-        text-align: center;
-      }
+      .back1usb,
       .back2usb {
         height: 18%;
         width: 20%;
         padding: 10px;
         text-align: center;
+        margin: 0 10px;
       }
       @media (prefers-color-scheme: dark) {
         body {
-          background-color: #333;
-          color: #fff;
+          background-color: #121212;
+          color: #e0e0e0;
         }
         a {
-          color: #58a6ff;
+          color: #03dac6; /* Teal accent */
+        }
+        .content {
+          background-color: #1e1e1e;
+        }
+      }
+      @media (max-width: 600px) {
+        body {
+          padding: 10px;
+        }
+        .content {
+          padding: 8px;
         }
       }
     </style>
@@ -108,8 +133,15 @@
     ></script>
   </head>
   <body>
-    <h1 align="center">-= ScaryRF ESP32 Flasher =-</h1>
-    <img src="ScaryRFTool-Tela-SH1106/scary.xbm" alt="Logo" class="logo" />
+    <h1>-= ScaryRF ESP32 Flasher =-</h1>
+    <div class="logo">
+      <img
+        src="Scary_LOGO.svg"
+        alt="Logo Scary RF"
+        class="logo-icon"
+        draggable="false"
+      />
+    </div>
     <div class="content">
       <p>
         <b
@@ -121,11 +153,11 @@
         If asked to put your device into <b>download mode</b>, follow the
         instructions specific to your ESP32 board.
       </p>
-      <p class="button-row" align="center">
+      <div class="button-row">
         <esp-web-install-button
           manifest="manifest.json"
         ></esp-web-install-button>
-      </p>
+      </div>
       <div class="footer">
         Flasher by
         <a href="https://github.com/FernandoHansen666">FernandoHansen666</a>
