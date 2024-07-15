@@ -23,7 +23,7 @@
           "offset": 32768
         },
         {
-          "path": "MenuRF.ino.esp32.bin",
+          "path": "ScaryRFTool-Tela-SH1106.ino.partitions.bin",
           "offset": 65536
         }
       ]
