@@ -1,18 +1,24 @@
 {
-  "chipFamily": "ESP32",
-  "improv": false,
-  "parts": [
+  "name": "ScaryRF ESP32",
+  "builds": [
     {
-      "path": "ScaryRFTool-Tela-SH1106.ino.bootloader.bin",
-      "offset": 4096
+      "chipFamily": "ESP32",
+      "improv": false,
+      "parts": [
+        {
+          "path": "ScaryRFTool-Tela-SH1106.ino.bootloader.bin",
+          "offset": 4096
+        },
+        {
+          "path": "ScaryRFTool-Tela-SH1106.ino.partitions.bin",
+          "offset": 32768
+        },
+        { "path": "ScaryRFTool-Tela-SH1106.ino.bin", "offset": 65536 }
+      ]
     },
     {
-      "path": "ScaryRFTool-Tela-SH1106.ino.partitions.bin",
-      "offset": 32768
-    },
-    {
-      "path": "ScaryRFTool-Tela-SH1106.ino.bin",
-      "offset": 65536
+      "chipFamily": "ESP8266",
+      "parts": [{ "path": "esp8266.bin", "offset": 0 }]
     }
   ]
 }
