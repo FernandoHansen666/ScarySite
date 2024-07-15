@@ -73,7 +73,9 @@
                 >
               </div>
               <div>
-                <a href="flesh.html" class="nav-link"> Flasher by Scary-RF</a>
+                <a href="flesh.html" class="nav-link" id="flasher-link">
+                  Flasher by Scary-RF</a
+                >
               </div>
             </li>
           </ul>
@@ -177,6 +179,22 @@
             "If you have any questions or need support to use SCARY RF, feel free to open an issue on GitHub or contact me directly. I'm here to help!";
         }
       }
+    </script>
+    <script>
+      function checkScreenWidth() {
+        var flasherLink = document.getElementById("flasher-link");
+        if (window.innerWidth < 790) {
+          flasherLink.style.display = "none";
+        } else {
+          flasherLink.style.display = "block";
+        }
+      }
+
+      // Verificar a largura da tela quando a página é carregada
+      window.onload = checkScreenWidth;
+
+      // Verificar a largura da tela quando a janela é redimensionada
+      window.onresize = checkScreenWidth;
     </script>
   </body>
 </html>
