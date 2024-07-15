@@ -15,10 +15,6 @@
         },
         { "path": "ScaryRFTool-Tela-SH1106.ino.bin", "offset": 65536 }
       ]
-    },
-    {
-      "chipFamily": "ESP8266",
-      "parts": [{ "path": "esp8266.bin", "offset": 0 }]
     }
   ]
 }
