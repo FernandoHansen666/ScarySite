@@ -9,6 +9,24 @@
           "offset": 0
         }
       ]
+    },
+    {
+      "chipFamily": "ESP32",
+      "improv": false,
+      "parts": [
+        {
+          "path": "ScaryRFTool-Tela-SH1106.ino.bootloader.bin",
+          "offset": 4096
+        },
+        {
+          "path": "ScaryRFTool-Tela-SH1106.ino.partitions.bin",
+          "offset": 32768
+        },
+        {
+          "path": "MenuRF.ino.esp32.bin",
+          "offset": 65536
+        }
+      ]
     }
   ]
 }
