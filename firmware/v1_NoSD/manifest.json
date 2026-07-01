@@ -1,6 +1,6 @@
 {
-  "name": "ScaryRF ESP32 (v1)",
-  "version": "v1",
+  "name": "ScaryRF ESP32 (v1_NoSD)",
+  "version": "v1_NoSD",
   "builds": [
     {
       "chipFamily": "ESP32",

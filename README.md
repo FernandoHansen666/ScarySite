@@ -29,8 +29,8 @@ Site estático (HTML/CSS/JS puro, sem build) publicado via **GitHub Pages**. Tem
 ├── Scary_LOGO.svg        # logo + ícones das redes
 ├── assets/fonts/         # fontes Hemogoblin e alagard
 └── firmware/             # binários do firmware, versionados
-    ├── v1/               # manifest.json + .bin
-    ├── v2/               # manifest.json + .bin
+    ├── v1_NoSD/          # manifest.json + .bin
+    ├── v2_NoSD/          # manifest.json + .bin
     ├── v3/               # manifest.json + .bin  (versão atual/padrão)
     ├── v3.1/             # (reservado — futuras atualizações da linha v3)
     └── alpha/            # (reservado)
