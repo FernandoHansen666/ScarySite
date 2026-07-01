@@ -1,0 +1,15 @@
+{
+  "name": "ScaryRF ESP32 (v3)",
+  "version": "v3",
+  "builds": [
+    {
+      "chipFamily": "ESP32",
+      "improv": false,
+      "parts": [
+        { "path": "ScaryRF-V3.ino.bootloader.bin", "offset": 4096 },
+        { "path": "ScaryRF-V3.ino.partitions.bin", "offset": 32768 },
+        { "path": "ScaryRF-V3.ino.bin", "offset": 65536 }
+      ]
+    }
+  ]
+}

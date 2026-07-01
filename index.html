@@ -4,7 +4,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="cache-control" content="no-cache" />
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link
       rel="preload"
       href="assets/fonts/hemogoblin.ttf"
@@ -26,11 +25,20 @@
     />
     <link rel="stylesheet" href="styles.css" />
     <meta name="robots" content="index,follow" />
+    <meta
+      name="description"
+      content="Scary-RF - low-cost, open-source ESP32 + CC1101 Sub-GHz RF research tool. Capture, analyze and replay 315/433 MHz signals, spectrum analyzer, WiFi Deauther, BLE spam and more."
+    />
     <link rel="canonical" href="https://scary.com.br" />
     <meta property="og:title" content="SCARY RF" />
+    <meta property="og:type" content="website" />
     <meta property="og:locale" content="en_US" />
     <meta property="og:url" content="https://scary.com.br" />
     <meta property="og:site_name" content="SCARY RF" />
+    <meta
+      property="og:description"
+      content="Open-source ESP32 + CC1101 Sub-GHz RF research tool. Capture, analyze and replay 315/433 MHz signals, spectrum analyzer, WiFi Deauther, BLE spam and more."
+    />
     <title>SCARY RF</title>
   </head>
   <body>
@@ -84,32 +92,150 @@
 
       <div class="content-container">
         <div class="content">
-          <div class="infos-main">
-            <div class="info">
-              <h2 id="title">What is SCARY RF?</h2>
-              <br />
-              <p id="description">
-                The Scary-RF Tool is an Arduino-based project using an ESP32, a
-                CC1101 module, and some components to create a versatile radio
-                communication tool (RF). With it, you can capture and reproduce
-                RF signals (the famous Replay Attack) at frequencies of 315MHz
-                or 433.92MHz, send a random code at 315-433Mhz, and analyze
-                which frequency it is receiving at 300-928Mhz. <br />Future
-                updates will include more functions, It also has bluetooth
-                spam and wifi functions (in progress).
-              </p>
+          <section class="info hero">
+            <h2 data-en="What is SCARY RF?" data-pt="O que é o SCARY RF?"></h2>
+            <p
+              class="lead"
+              data-en="Scary-RF is a low-cost, open-source Sub-GHz RF research tool built on an ESP32 and a CC1101 transceiver. Capture, analyze and replay signals on 315/433 MHz, run a visual spectrum analyzer across 300-928 MHz, and store captures in Flipper .sub format on SD - plus WiFi Deauther, multi-platform BLE spam, presence-tag cloning and a Bad-BLE keyboard."
+              data-pt="O Scary-RF é uma ferramenta de pesquisa em RF Sub-GHz de baixo custo e código aberto, feita com um ESP32 e um transceptor CC1101. Capture, analise e reproduza sinais em 315/433 MHz, use o analisador visual de espectro em 300-928 MHz e salve capturas no formato .sub (Flipper) no SD - além de Deauther WiFi, BLE spam multi-plataforma, clonagem de presence tags e teclado Bad-BLE."
+            ></p>
+            <div class="cta-row">
+              <a class="btn-scary" href="flesh.html"
+                ><span data-en="⚡ Flash your ESP32" data-pt="⚡ Instalar no ESP32"></span
+              ></a>
+              <a
+                class="btn-scary btn-ghost"
+                href="https://github.com/FernandoHansen666/ScaryRF-315-433mhz"
+                target="_blank"
+                ><span data-en="View on GitHub" data-pt="Ver no GitHub"></span
+              ></a>
             </div>
-            <div class="info">
-              <br /><br />
-              <h3 id="support-title">Questions and Support</h3>
-              <br />
-              <p id="support-description">
-                If you have any questions or need support to use SCARY RF, feel
-                free to open an issue on GitHub or contact me directly. I'm here
-                to help!
-              </p>
+          </section>
+
+          <section class="features">
+            <h3 class="section-title" data-en="Features" data-pt="Funcionalidades"></h3>
+            <div class="feature-grid">
+              <div class="feature-card">
+                <h4 data-en="📡 Capture &amp; Replay" data-pt="📡 Captura &amp; Replay"></h4>
+                <p
+                  data-en="Capture RF signals on 315/433 MHz and replay them (Replay Attack), with protocol name recognition."
+                  data-pt="Capture sinais RF em 315/433 MHz e reproduza-os (Replay Attack), com reconhecimento do nome do protocolo."
+                ></p>
+              </div>
+              <div class="feature-card">
+                <h4 data-en="🔍 Spectrum Analyzer" data-pt="🔍 Analisador de Espectro"></h4>
+                <p
+                  data-en="Identify frequencies across 300-928 MHz with a visual RSSI spectrum analyzer."
+                  data-pt="Identifique frequências em 300-928 MHz com um analisador visual de espectro (RSSI)."
+                ></p>
+              </div>
+              <div class="feature-card">
+                <h4 data-en="📊 RAW Capture" data-pt="📊 Captura RAW"></h4>
+                <p
+                  data-en="Capture and visualize RAW waveforms for signals that don't fit a known protocol."
+                  data-pt="Capture e visualize formas de onda RAW para sinais que não seguem um protocolo conhecido."
+                ></p>
+              </div>
+              <div class="feature-card">
+                <h4 data-en="💾 SD Storage" data-pt="💾 Armazenamento SD"></h4>
+                <p
+                  data-en="Save, load and delete captures on SD card in Flipper .sub format."
+                  data-pt="Salve, carregue e apague capturas no cartão SD no formato .sub (Flipper)."
+                ></p>
+              </div>
+              <div class="feature-card">
+                <h4 data-en="🎲 De Bruijn Brute-force" data-pt="🎲 Brute-force De Bruijn"></h4>
+                <p
+                  data-en="Fixed-code brute force with adjustable clock (TE) for gate remotes."
+                  data-pt="Brute-force de código fixo com clock ajustável (TE) para controles de portão."
+                ></p>
+              </div>
+              <div class="feature-card">
+                <h4 data-en="✍️ Manual Generator" data-pt="✍️ Gerador Manual"></h4>
+                <p
+                  data-en="Build a signal by frequency, protocol, bits and hex code - or Test All .sub files in a folder."
+                  data-pt="Monte um sinal por frequência, protocolo, bits e código hex - ou use o Test All em uma pasta de .sub."
+                ></p>
+              </div>
+              <div class="feature-card">
+                <h4 data-en="🌡️ 433 MHz Sensors" data-pt="🌡️ Sensores 433 MHz"></h4>
+                <p
+                  data-en="Decode multi-protocol sensors: Nexus, Acurite 609, Prologue, LaCrosse TX."
+                  data-pt="Decodifique sensores multi-protocolo: Nexus, Acurite 609, Prologue, LaCrosse TX."
+                ></p>
+              </div>
+              <div class="feature-card">
+                <h4 data-en="📶 WiFi Deauther" data-pt="📶 Deauther WiFi"></h4>
+                <p
+                  data-en="Send 802.11 deauthentication frames to test WiFi resilience."
+                  data-pt="Envie quadros de deautenticação 802.11 para testar a resiliência do WiFi."
+                ></p>
+              </div>
+              <div class="feature-card">
+                <h4 data-en="📢 BLE Spam" data-pt="📢 BLE Spam"></h4>
+                <p
+                  data-en="Spam Apple, Windows (Swift Pair), Android (Fast Pair), Samsung (EasySetup) or All, with MAC rotation."
+                  data-pt="Spam para Apple, Windows (Swift Pair), Android (Fast Pair), Samsung (EasySetup) ou Todos, com rotação de MAC."
+                ></p>
+              </div>
+              <div class="feature-card">
+                <h4 data-en="🔖 Presence Tags" data-pt="🔖 Presence Tags"></h4>
+                <p
+                  data-en="Scan, clone and spoof nearby BLE trackers (AirTag, Tile, Samsung Tag)."
+                  data-pt="Escaneie, clone e falsifique rastreadores BLE próximos (AirTag, Tile, Samsung Tag)."
+                ></p>
+              </div>
+              <div class="feature-card">
+                <h4 data-en="⌨️ Bad-BLE" data-pt="⌨️ Bad-BLE"></h4>
+                <p
+                  data-en="Rogue BLE keyboard that runs DuckyScript files from /badusb/."
+                  data-pt="Teclado BLE malicioso que executa arquivos DuckyScript de /badusb/."
+                ></p>
+              </div>
+              <div class="feature-card">
+                <h4 data-en="📟 OLED Interface" data-pt="📟 Interface OLED"></h4>
+                <p
+                  data-en="1.3-inch SH1106 OLED with a consistent button-driven menu on every screen."
+                  data-pt="OLED SH1106 de 1.3 polegadas com menu consistente por botões em todas as telas."
+                ></p>
+              </div>
             </div>
-          </div>
+          </section>
+
+          <section class="hardware">
+            <h3 class="section-title" data-en="Hardware" data-pt="Hardware"></h3>
+            <p
+              data-en="ESP32 · CC1101 Sub-GHz transceiver · 1.3-inch SH1106 OLED · MicroSD module · navigation buttons · 315/433 MHz switch · Li-ion battery with charger · custom etched PCB."
+              data-pt="ESP32 · transceptor Sub-GHz CC1101 · OLED SH1106 de 1.3 polegadas · módulo MicroSD · botões de navegação · chave 315/433 MHz · bateria Li-ion com carregador · PCB customizada."
+            ></p>
+          </section>
+
+          <section class="install">
+            <h3 class="section-title" data-en="Installation" data-pt="Instalação"></h3>
+            <p
+              data-en="Use the Web Flasher above for the easiest install, or build from source with Arduino IDE / PlatformIO (ESP32 core + ELECHOUSE_CC1101, U8g2, RCSwitch and NimBLE-Arduino). Full instructions are on GitHub."
+              data-pt="Use o Web Flasher acima para a instalação mais fácil, ou compile do código-fonte com Arduino IDE / PlatformIO (core ESP32 + ELECHOUSE_CC1101, U8g2, RCSwitch e NimBLE-Arduino). As instruções completas estão no GitHub."
+            ></p>
+          </section>
+
+          <section class="disclaimer">
+            <p
+              data-en="⚠️ For educational and RF research purposes only. Always comply with your local laws and regulations. The author is not responsible for misuse."
+              data-pt="⚠️ Apenas para fins educacionais e de pesquisa em RF. Sempre respeite as leis e regulamentos locais. O autor não se responsabiliza por uso indevido."
+            ></p>
+          </section>
+
+          <section class="info support">
+            <h3
+              class="section-title"
+              data-en="Questions and Support"
+              data-pt="Dúvidas e suporte"
+            ></h3>
+            <p
+              data-en="If you have any questions or need support to use SCARY RF, feel free to open an issue on GitHub or contact me directly. I'm here to help!"
+              data-pt="Se você tiver alguma dúvida ou precisar de suporte para usar o SCARY RF, não hesite em abrir uma issue no GitHub ou entrar em contato diretamente comigo. Estou aqui para ajudar!"
+            ></p>
+          </section>
         </div>
       </div>
 
@@ -125,8 +251,8 @@
                 <img src="Disc-icon.svg" alt="logo discord" />
                 <p><span class="social-link">discord.gg</span></p>
               </a>
+              <hr />
             </li>
-            <hr />
             <li>
               <a
                 class="socials"
@@ -136,8 +262,8 @@
                 <img src="Insta-icon.svg" alt="logo instagram" />
                 <p><span class="social-link">Instagram</span></p>
               </a>
+              <hr />
             </li>
-            <hr />
             <li>
               <a
                 class="socials"
@@ -158,25 +284,14 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script>
       function setLanguage(lang) {
-        if (lang === "pt-br") {
-          document.documentElement.lang = "pt-BR";
-          document.getElementById("title").innerText = "O que é o SCARY RF?";
-          document.getElementById("description").innerText =
-            "O Scary-RF Tool é um projeto raiz de Arduino, usando um ESP32, um módulo CC1101 e alguns componentes para criar uma ferramenta versátil de comunicação por rádio (RF). Com ela, você pode capturar e reproduzir sinais RF (o famoso Replay Attack) nas frequências de 315MHz ou 433.92MHz, enviar um código aleatório em 315-433Mhz e analisar qual frequência está recebendo 300-928Mhz. Tambem tem funçoes de bluetooth spam e wifi (em andamento).";
-          document.getElementById("support-title").innerText =
-            "Dúvidas e suporte";
-          document.getElementById("support-description").innerText =
-            "Se você tiver alguma dúvida ou precisar de suporte para usar o SCARY RF, não hesite em abrir uma issue no GitHub ou entrar em contato diretamente comigo. Estou aqui para ajudar!";
-        } else {
-          document.documentElement.lang = "en";
-          document.getElementById("title").innerText = "What is SCARY RF?";
-          document.getElementById("description").innerText =
-            "The Scary-RF Tool is an Arduino-based project using an ESP32, a CC1101 module, and some components to create a versatile radio communication tool (RF). With it, you can capture and reproduce RF signals (the famous Replay Attack) at frequencies of 315MHz or 433.92MHz, send a random code at 315-433Mhz, and analyze which frequency it is receiving at 300-928Mhz. Future updates will include more functions, It also has bluetooth spam and wifi functions (in progress).";
-          document.getElementById("support-title").innerText =
-            "Questions and Support";
-          document.getElementById("support-description").innerText =
-            "If you have any questions or need support to use SCARY RF, feel free to open an issue on GitHub or contact me directly. I'm here to help!";
-        }
+        lang = lang === "pt-br" ? "pt-br" : "en";
+        localStorage.setItem("scary-lang", lang);
+        document.documentElement.lang = lang === "pt-br" ? "pt-BR" : "en";
+        var attr = lang === "pt-br" ? "data-pt" : "data-en";
+        document.querySelectorAll("[data-en]").forEach(function (el) {
+          var val = el.getAttribute(attr);
+          if (val !== null) el.innerHTML = val;
+        });
       }
     </script>
     <script>
@@ -189,8 +304,12 @@
         }
       }
 
-      // Verificar a largura da tela quando a página é carregada
-      window.onload = checkScreenWidth;
+      // Aplicar idioma e checar a largura assim que o DOM estiver pronto
+      // (sem esperar o vídeo/scripts externos carregarem)
+      document.addEventListener("DOMContentLoaded", function () {
+        setLanguage(localStorage.getItem("scary-lang") || "en");
+        checkScreenWidth();
+      });
 
       // Verificar a largura da tela quando a janela é redimensionada
       window.onresize = checkScreenWidth;

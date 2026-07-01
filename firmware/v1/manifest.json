@@ -1,5 +1,6 @@
 {
-  "name": "ScaryRF ESP32",
+  "name": "ScaryRF ESP32 (v1)",
+  "version": "v1",
   "builds": [
     {
       "chipFamily": "ESP32",

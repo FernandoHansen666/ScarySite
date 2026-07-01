@@ -8,122 +8,218 @@
       content="Easily flash ScaryRF firmware on your ESP32 device"
     />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="color-scheme" content="dark light" />
+    <meta name="color-scheme" content="dark" />
+    <link rel="icon" href="Scary_LOGO.svg" />
+    <link
+      rel="preload"
+      href="assets/fonts/hemogoblin.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="assets/fonts/alagard.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin
+    />
 
     <style>
-      body {
-        font-family: "Courier New", Courier, monospace;
+      @font-face {
+        src: url("assets/fonts/hemogoblin.ttf");
+        font-family: "Hemogoblin";
+      }
+      @font-face {
+        src: url("assets/fonts/alagard.ttf");
+        font-family: "alagard";
+      }
+
+      * {
         margin: 0;
-        padding: 20px;
-        color: #e0e0e0; /* Light gray for better readability */
-        background-color: #121212; /* Dark background */
-        line-height: 1.6;
+        padding: 0;
+        box-sizing: border-box;
       }
-      .content {
-        max-width: 600px;
-        margin: 0 auto;
-        padding: 12px;
-        background-color: #1e1e1e; /* Slightly lighter background for contrast */
-        border-radius: 8px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-        border: 1px solid #6200ea; /* Accent color */
+
+      html,
+      body {
+        width: 100%;
+        min-height: 100%;
+        font-family: "alagard", sans-serif;
+        font-size: 20px;
+        color: #e6e6e6;
+        background-color: #070707;
+        overflow-x: hidden;
       }
-      h1,
-      h2,
-      h3 {
-        text-align: center;
-        color: #bb86fc; /* Light purple accent */
+
+      /* Fundo em vídeo, igual à página inicial */
+      #video-background {
+        position: fixed;
+        top: 0;
+        left: 0;
+        min-width: 100%;
+        min-height: 100%;
+        width: auto;
+        height: 100%;
+        z-index: 0;
       }
-      h1 {
-        font-size: 2em;
-        margin-bottom: 0.5em;
+      #video-background video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: brightness(0.2);
       }
-      h2 {
-        margin-top: 2em;
+
+      .page {
+        position: relative;
+        z-index: 1;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 40px 20px;
       }
-      h3 {
-        margin-top: 1.5em;
-      }
-      p {
+
+      .logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         margin-bottom: 1em;
       }
+      .logo-icon {
+        height: 110px;
+        width: 250px;
+      }
+
+      h1 {
+        font-family: "Hemogoblin", sans-serif;
+        font-weight: 400;
+        text-align: center;
+        color: #00b4d4;
+        letter-spacing: 2px;
+        font-size: 2em;
+        margin-bottom: 0.8em;
+      }
+
+      .content {
+        width: 90%;
+        max-width: 600px;
+        padding: 28px;
+        text-align: center;
+        color: #e6e6e6;
+        background-color: rgba(0, 0, 0, 0.7);
+        border: 1px solid #00847e;
+        border-radius: 10px;
+        box-shadow: 0 0 25px rgba(0, 132, 126, 0.25);
+        line-height: 1.6;
+      }
+
+      .content p {
+        margin-bottom: 1em;
+      }
+      .content b {
+        color: #ffffff;
+      }
+
       a {
-        color: #03dac6; /* Teal accent */
+        color: #00b4d4;
         text-decoration: none;
       }
       a:hover {
         text-decoration: underline;
       }
-      .button-row {
-        text-align: center;
-        margin: 1.5em 0;
-      }
-      .footer {
-        margin-top: 24px;
-        border-top: 1px solid #6200ea; /* Accent color */
-        padding-top: 24px;
-        text-align: center;
-      }
-      .footer a {
-        color: #bb86fc; /* Light purple accent */
-      }
-      .footer .initiative {
-        font-style: italic;
-        margin-top: 16px;
-      }
-      table {
-        border-spacing: 0;
-        width: 100%;
-        margin-bottom: 1.5em;
-      }
-      td {
-        padding: 8px;
-        border-bottom: 1px solid #6200ea; /* Accent color */
-      }
-      .radios li {
-        list-style: none;
-        line-height: 2em;
-      }
-      .logo {
+
+      /* Seletor de versão do firmware */
+      .version-row {
+        margin: 0.5em 0 1.2em;
         display: flex;
         justify-content: center;
         align-items: center;
-        margin: 0 auto 1em;
+        gap: 10px;
+        flex-wrap: wrap;
+        font-size: 0.9em;
       }
-      .logo-icon {
-        height: 125px;
-        width: 250px;
+      .version-row label {
+        color: #b7b7b7;
+        letter-spacing: 1px;
       }
-      .wrapper {
+      #fw-version {
+        font-family: "alagard", sans-serif;
+        font-size: 1em;
+        color: #e6e6e6;
+        background-color: rgba(0, 0, 0, 0.6);
+        border: 1px solid #00847e;
+        border-radius: 6px;
+        padding: 8px 12px;
+        cursor: pointer;
+      }
+      #fw-version:focus {
+        outline: none;
+        border-color: #00b4d4;
+      }
+      #fw-version option {
+        background-color: #0b0b0b;
+        color: #e6e6e6;
+      }
+
+      .button-row {
+        margin: 0.4em 0 0.5em;
         display: flex;
         justify-content: center;
       }
-      .back1usb,
-      .back2usb {
-        height: 18%;
-        width: 20%;
-        padding: 10px;
+
+      /* Botão gótico usado no slot do ESP Web Tools */
+      .btn-scary {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        padding: 14px 30px;
+        font-family: "Hemogoblin", sans-serif;
+        font-size: 1em;
+        letter-spacing: 1px;
+        color: #fff;
+        background-color: #00847e;
+        border: 1px solid #00b4d4;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: background-color 0.2s ease, transform 0.1s ease;
+      }
+      .btn-scary:hover {
+        background-color: #00b4d4;
+        transform: translateY(-2px);
+      }
+
+      .msg {
+        font-size: 0.85em;
+        color: #b7b7b7;
+      }
+      .msg.error {
+        color: #ee5555;
+      }
+
+      .footer {
+        margin-top: 26px;
+        border-top: 1px solid #00847e;
+        padding-top: 20px;
         text-align: center;
-        margin: 0 10px;
+        font-size: 0.85em;
       }
-      @media (prefers-color-scheme: dark) {
-        body {
-          background-color: #121212;
-          color: #e0e0e0;
-        }
-        a {
-          color: #03dac6; /* Teal accent */
-        }
-        .content {
-          background-color: #1e1e1e;
-        }
+      .footer a {
+        color: #00b4d4;
       }
+
       @media (max-width: 600px) {
+        html,
         body {
-          padding: 10px;
+          font-size: 17px;
         }
         .content {
-          padding: 8px;
+          padding: 18px;
+        }
+        .logo-icon {
+          height: 90px;
+          width: 200px;
         }
       }
     </style>
@@ -133,36 +229,86 @@
     ></script>
   </head>
   <body>
-    <h1>-= ScaryRF ESP32 Flasher =-</h1>
-    <div class="logo">
-      <img
-        src="Scary_LOGO.svg"
-        alt="Logo Scary RF"
-        class="logo-icon"
-        draggable="false"
-      />
+    <div id="video-background">
+      <video autoplay loop muted playsinline>
+        <source src="MSHM.mp4" type="video/mp4" />
+      </video>
     </div>
-    <div class="content">
-      <p>
-        <b
-          >Connect your ESP32 device then click "Flash" and follow the
-          prompts.</b
-        >
-      </p>
-      <p>
-        If asked to put your device into <b>download mode</b>, follow the
-        instructions specific to your ESP32 board.
-      </p>
-      <div class="button-row">
-        <esp-web-install-button
-          manifest="manifest.json"
-        ></esp-web-install-button>
+
+    <div class="page">
+      <div class="logo">
+        <a href="index.html">
+          <img
+            src="Scary_LOGO.svg"
+            alt="Logo Scary RF"
+            class="logo-icon"
+            draggable="false"
+          />
+        </a>
       </div>
-      <div class="footer">
-        Flasher by
-        <a href="https://github.com/FernandoHansen666">FernandoHansen666</a>
-        &mdash; Installer powered by
-        <a href="https://esphome.github.io/esp-web-tools/">ESP Web Tools</a> 🛠️
+
+      <h1>-= ScaryRF ESP32 Flasher =-</h1>
+
+      <div class="content">
+        <p>
+          <b
+            >Connect your ESP32 device, then click "Flash" and follow the
+            prompts.</b
+          >
+        </p>
+        <p>
+          If asked to put your device into <b>download mode</b>, follow the
+          instructions specific to your ESP32 board.
+        </p>
+
+        <div class="version-row">
+          <label for="fw-version">Firmware version:</label>
+          <select id="fw-version">
+            <!-- Versões futuras da linha v3 (v3.1, v3.2...) entram neste optgroup. -->
+            <optgroup label="v3">
+              <option value="firmware/v3/manifest.json" selected>
+                v3 (latest)
+              </option>
+            </optgroup>
+            <option value="firmware/v2/manifest.json">v2</option>
+            <option value="firmware/v1/manifest.json">v1</option>
+          </select>
+        </div>
+
+        <div class="button-row">
+          <esp-web-install-button
+            id="install-btn"
+            manifest="firmware/v3/manifest.json"
+          >
+            <button class="btn-scary" slot="activate">⚡ Flash ScaryRF</button>
+            <span slot="unsupported" class="msg error"
+              >Your browser does not support Web Serial. Use Chrome or Edge on
+              desktop.</span
+            >
+            <span slot="not-allowed" class="msg error"
+              >This flasher must be served over HTTPS.</span
+            >
+          </esp-web-install-button>
+        </div>
+
+        <script>
+          // Troca o manifest do instalador conforme a versão escolhida
+          (function () {
+            var sel = document.getElementById("fw-version");
+            var btn = document.getElementById("install-btn");
+            sel.addEventListener("change", function () {
+              btn.setAttribute("manifest", sel.value);
+            });
+          })();
+        </script>
+
+        <div class="footer">
+          Flasher by
+          <a href="https://github.com/FernandoHansen666">FernandoHansen666</a>
+          &mdash; Installer powered by
+          <a href="https://esphome.github.io/esp-web-tools/">ESP Web Tools</a>
+          🛠️
+        </div>
       </div>
     </div>
   </body>
