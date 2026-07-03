@@ -373,67 +373,94 @@ body {
 }
 
 @media (max-width: 650px) {
-
-  .content {
-    width: 90%;
-    padding: 20px 0;
+  html,
+  body {
+    font-size: 15px;
   }
 
+  /* No celular, navbar e rodape ROLAM junto com a pagina (nao sao fixos).
+     O video de fundo continua fixo atras de tudo. */
+  .navbar {
+    position: static;
+    height: auto;
+    padding: 10px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .navbar-brand {
+    display: none;
+  }
+  .logo {
+    position: static;
+    transform: none;
+    max-width: none;
+  }
+  .logo-icon {
+    height: 46px;
+    width: 130px;
+  }
+  /* mantém o idioma à direita, colado no canto */
+  .navbar-collapse {
+    display: flex;
+    flex: 0 0 auto;
+    width: auto;
+  }
+
+  footer {
+    position: static;
+    height: auto;
+    padding: 16px 0;
+  }
+  footer hr {
+    display: none;
+  }
   .logo-text,
   .social-link {
     display: none;
-    gap: 1rem;
   }
 
-  html,
-body {
-  width: 100%;
-  height: 100%;
-  overflow-x: hidden;
-  overflow-y: auto;
-  font-size: 15px;
-}  
-
-  .button {
-    width: 120px; /* Ajusta a largura dos botões para dispositivos menores */
-    height: 36px;
-    font-size: 18px;
+  /* sem os paddings que "escapavam" das barras fixas */
+  .general-container {
+    padding: 0;
   }
 
-  .general-container,
-.content-container {
- 
-  width: 100%;
-  height: 100%;
-  
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-  .logo-icon {
-    height: 100px; /* Ajusta o tamanho do ícone da logo para dispositivos menores */
-    width: 180px;
+  .content {
+    width: 92%;
+    padding: 22px 16px;
+    margin: 16px auto;
   }
-  
+  .content section {
+    margin-bottom: 26px;
+  }
+
+  /* features em 1 coluna */
+  .feature-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  /* botoes empilhados e faceis de tocar */
+  .cta-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+  .btn-scary {
+    width: 100%;
+    padding: 14px 20px;
+  }
+
   .dropdown-menu {
-    min-width: 100px; /* Minimum width */
-    max-width: 200px; /* Maximum width */
-    width: auto; /* Adjust width automatically */
+    min-width: 100px;
+    max-width: 200px;
+    width: auto;
   }
-
   .nav-item.dropdown .dropdown-menu {
     top: 100%;
     left: 0;
     right: auto;
     position: absolute;
   }
-  
-
-  .navbar-collapse {
-    display: flex;
-  }
-
-
 }
 
